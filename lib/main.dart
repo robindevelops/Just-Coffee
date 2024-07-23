@@ -1,3 +1,4 @@
+import 'package:coffee_app/HomeScreen.dart';
 import 'package:coffee_app/WelcomScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: WelcomScreen(),
+      home: HomeScreen(),
     );
   }
 }

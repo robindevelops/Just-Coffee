@@ -1,19 +1,9 @@
-// ignore_for_file: file_names, prefer_const_constructors
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class Colors extends StatelessWidget {
-  const Colors({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        scaffoldBackgroundColor: Color.fromRGBO(228, 195, 121, 1),
-        appBarTheme: AppBarTheme(
-          color: Color.fromRGBO(100, 85, 65, 1),
-        ),
-      ),
-    );
-  }
-}
+Color base = Color.fromRGBO(228, 195, 128, 1);
+Color brown = Color.fromRGBO(100, 85, 65, 1);
+Color cup = Color.fromRGBO(189, 148, 93, 1);
+Color icons = Color.fromRGBO(30, 74, 44, 0);
+Color base2 = Color.fromRGBO(186, 141, 91, 0);

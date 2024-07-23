@@ -1,3 +1,6 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
+import 'package:coffee_app/Widgets/OfferCard.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -28,9 +31,14 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(width: 10),
         ],
       ),
-      body: const SafeArea(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
         child: Column(
-          children: [],
+          children: [
+            OfferCard(),
+            SizedBox(height: 15),
+            Divider(),
+          ],
         ),
       ),
     );

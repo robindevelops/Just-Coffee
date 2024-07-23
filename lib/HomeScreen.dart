@@ -38,7 +38,9 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             OfferCard(),
             SizedBox(height: 15),
-            Divider(),
+            Divider(
+              color: Colors.brown,
+            ),
           ],
         ),
       ),

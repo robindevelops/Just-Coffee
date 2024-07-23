@@ -1,4 +1,5 @@
 import 'package:coffee_app/Themes/Colors.dart';
+import 'package:coffee_app/Widgets/CoffeCard.dart';
 import 'package:coffee_app/Widgets/OfferCard.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -55,42 +56,50 @@ class _HomeScreenState extends State<HomeScreen>
           SizedBox(width: 10),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-        child: Column(
-          children: [
-            OfferCard(),
-            SizedBox(height: 15),
-            Divider(color: Colors.brown),
-            TabBar(
-              labelColor: Colors.brown[900],
-              dividerColor: Colors.transparent,
+      body: Column(
+        children: [
+          OfferCard(),
+          SizedBox(height: 15),
+          Divider(color: Colors.brown),
+          TabBar(
+            labelColor: Colors.brown[900],
+            dividerColor: Colors.transparent,
+            controller: _tabController,
+            indicatorColor: Colors.black,
+            tabs: const [
+              Tab(text: "Home"),
+              Tab(text: "Menu"),
+              Tab(text: "Offers"),
+            ],
+          ),
+          Expanded(
+            child: TabBarView(
               controller: _tabController,
-              indicatorColor: Colors.black,
-              tabs: const [
-                Tab(text: "Home"),
-                Tab(text: "Menu"),
-                Tab(text: "Offers"),
+              children: [
+                buildHomeTab(),
+                buildMenuTab(),
+                buildOffersTab(),
               ],
             ),
-            Expanded(
-              child: TabBarView(
-                controller: _tabController,
-                children: [
-                  buildHomeTab(),
-                  buildMenuTab(),
-                  buildOffersTab(),
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
 
   Widget buildHomeTab() {
-    return Center(child: Text("Home Content"));
+    return GridView.builder(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 90),
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+        childAspectRatio: 10 / 9,
+        maxCrossAxisExtent: 200,
+        mainAxisSpacing: 80,
+      ),
+      itemCount: 15,
+      itemBuilder: (context, index) {
+        return CoffeeCard();
+      },
+    );
   }
 
   Widget buildMenuTab() {

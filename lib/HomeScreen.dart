@@ -1,3 +1,4 @@
+import 'package:coffee_app/Themes/Colors.dart';
 import 'package:coffee_app/Widgets/OfferCard.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: base,
       appBar: AppBar(
+        backgroundColor: base,
         centerTitle: true,
         leading: const CircleAvatar(),
         title: const Column(

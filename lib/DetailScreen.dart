@@ -12,8 +12,8 @@ class Detailscreen extends StatefulWidget {
 class _DetailscreenState extends State<Detailscreen> {
   @override
   Widget build(BuildContext context) {
-    double screeWidth = MediaQuery.of(context).size.width;
-    double screeHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       body: Stack(
@@ -22,133 +22,149 @@ class _DetailscreenState extends State<Detailscreen> {
             children: [
               Row(
                 children: [
-                  Expanded(
-                    child: Container(
-                        height: screeHeight, color: Colors.brown[900]),
+                  Container(
+                    width: screenWidth * 0.25, // 25% of screen width
+                    height: screenHeight,
+                    color: const Color.fromARGB(255, 90, 53, 46),
                   ),
-                  Expanded(
-                    flex: 3,
-                    child: Container(
-                      height: screeHeight,
-                      color: Color.fromARGB(255, 229, 162, 61),
-                    ),
+                  Container(
+                    width: screenWidth * 0.75, // 75% of screen width
+                    height: screenHeight,
+                    color: Color.fromARGB(255, 245, 202, 137),
                   ),
                 ],
               ),
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 50.0),
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.arrow_back_ios_new,
-                        color: Colors.white,
-                      ),
-                    )
-                  ],
-                ),
-                Text(
-                  "Items Details",
-                  style: GoogleFonts.poppins(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.brown[900],
-                  ),
-                ),
-                SizedBox(height: 30),
-                Text(
-                  "Cappiciono",
-                  style: GoogleFonts.poppins(
-                    fontSize: 19,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.brown[900],
-                  ),
-                ),
-                Text(
-                  "Hot Coffee",
-                  style: GoogleFonts.poppins(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.brown[500],
-                  ),
-                ),
-                SizedBox(height: 20),
-                Text(
-                  "\$70",
-                  style: GoogleFonts.poppins(
-                    fontSize: 17,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.brown[900],
-                  ),
-                ),
-                SizedBox(height: 30),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Image.asset(
-                      "lib/images/1.png",
-                      height: 300,
+          SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 50.0, horizontal: 10.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.arrow_back_ios_new,
+                      color: Colors.white,
                     ),
-                    Column(
+                  ),
+                  Center(
+                    child: Text(
+                      "Items Details",
+                      style: GoogleFonts.poppins(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.brown[900],
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 30),
+                  Center(
+                    child: Column(
                       children: [
-                        SizeCard(size: 'S'),
-                        SizedBox(height: 10),
-                        SizeCard(size: 'L'),
-                        SizedBox(height: 10),
-                        SizeCard(size: 'M'),
+                        Text(
+                          "Cappuccino",
+                          style: GoogleFonts.poppins(
+                            fontSize: 19,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.brown[900],
+                          ),
+                        ),
+                        Text(
+                          "Hot Coffee",
+                          style: GoogleFonts.poppins(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.brown[500],
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        Text(
+                          "\$70",
+                          style: GoogleFonts.poppins(
+                            fontSize: 17,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.brown[900],
+                          ),
+                        ),
                       ],
                     ),
-                  ],
-                ),
-                SizedBox(height: 90),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: Colors.brown),
                   ),
-                  height: 40,
-                  width: 100,
-                  child: Row(
+                  SizedBox(height: 30),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Expanded(
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.add),
+                      Container(
+                        height: screenHeight * 0.4, // 40% of screen height
+                        child: Image.asset(
+                          "lib/images/1.png",
+                          fit: BoxFit.contain,
                         ),
                       ),
-                      Text("0"),
-                      Expanded(
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.remove),
-                        ),
+                      Column(
+                        children: [
+                          SizeCard(size: 'S'),
+                          SizedBox(height: 10),
+                          SizeCard(size: 'L'),
+                          SizedBox(height: 10),
+                          SizeCard(size: 'M'),
+                        ],
                       ),
                     ],
                   ),
-                ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(3),
+                  SizedBox(height: 90),
+                  Center(
+                    child: Column(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.brown),
+                          ),
+                          height: 40,
+                          width: 100,
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(Icons.add),
+                                ),
+                              ),
+                              Text("0"),
+                              Expanded(
+                                child: IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(Icons.remove),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(3),
+                            ),
+                            backgroundColor: Colors.brown[900],
+                          ),
+                          onPressed: () {},
+                          child: Text(
+                            "Add to cart",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 229, 162, 61),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                    backgroundColor: Colors.brown[900],
                   ),
-                  onPressed: () {},
-                  child: Text(
-                    "Add to cart",
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 229, 162, 61),
-                    ),
-                  ),
-                )
-              ],
+                ],
+              ),
             ),
-          )
+          ),
         ],
       ),
     );

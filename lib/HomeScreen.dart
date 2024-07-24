@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: base,
+      backgroundColor: Color.fromARGB(255, 245, 202, 137),
       appBar: AppBar(
         backgroundColor: base,
         centerTitle: true,
@@ -90,15 +90,15 @@ class _HomeScreenState extends State<HomeScreen>
         backgroundColor: Colors.brown[900],
         items: [
           BottomNavigationBarItem(
-            label: "",
+            label: "Home",
             icon: Icon(Icons.home),
           ),
           BottomNavigationBarItem(
-            label: "",
+            label: "Bag",
             icon: Icon(Icons.shopping_bag_sharp),
           ),
           BottomNavigationBarItem(
-            label: "",
+            label: "Cart",
             icon: Icon(Icons.shopping_cart),
           ),
           // BottomNavigationBarItem(

@@ -12,7 +12,7 @@ class CoffeeCard extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         Container(
-          height: 150,
+          height: 200,
           width: 150,
           decoration: BoxDecoration(
             color: Colors.brown[900],

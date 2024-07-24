@@ -84,6 +84,29 @@ class _HomeScreenState extends State<HomeScreen>
           ),
         ],
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.orange[400],
+        unselectedItemColor: Colors.orange[200],
+        backgroundColor: Colors.brown[900],
+        items: [
+          BottomNavigationBarItem(
+            label: "",
+            icon: Icon(Icons.home),
+          ),
+          BottomNavigationBarItem(
+            label: "",
+            icon: Icon(Icons.shopping_bag_sharp),
+          ),
+          BottomNavigationBarItem(
+            label: "",
+            icon: Icon(Icons.shopping_cart),
+          ),
+          // BottomNavigationBarItem(
+          //   label: "",
+          //   icon: Icon(Icons.history_toggle_off_rounded),
+          // ),
+        ],
+      ),
     );
   }
 
@@ -97,7 +120,10 @@ class _HomeScreenState extends State<HomeScreen>
       ),
       itemCount: 15,
       itemBuilder: (context, index) {
-        return CoffeeCard();
+        return GestureDetector(
+          onTap: () {},
+          child: CoffeeCard(),
+        );
       },
     );
   }

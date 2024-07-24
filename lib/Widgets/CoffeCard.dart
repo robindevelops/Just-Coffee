@@ -47,7 +47,7 @@ class CoffeeCard extends StatelessWidget {
                     Text(
                       "\$20",
                       style: TextStyle(
-                        fontSize: 13,
+                        fontSize: 15,
                         fontWeight: FontWeight.bold,
                         color: Colors.orange[400],
                       ),
@@ -57,6 +57,7 @@ class CoffeeCard extends StatelessWidget {
                         color: Colors.orangeAccent,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(10),
+                          bottomRight: Radius.circular(10),
                         ),
                       ),
                       width: 40,
@@ -77,7 +78,7 @@ class CoffeeCard extends StatelessWidget {
           bottom: 100,
           child: Image.asset(
             "lib/images/1.png",
-            height: 120,
+            height: 125,
           ),
         ),
       ],

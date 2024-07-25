@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
-import 'package:coffee_app/presentation/screens/home_screen.dart';
+import 'package:coffee_app/presentation/themes/colors.dart';
+import 'package:coffee_app/presentation/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -15,7 +16,7 @@ class _WelcomScreenState extends State<WelcomScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFEDCDBB),
+      backgroundColor: backgroundColor,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30.0),
@@ -46,29 +47,7 @@ class _WelcomScreenState extends State<WelcomScreen> {
                 ),
               ),
               SizedBox(height: 90),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(7),
-                  ),
-                  minimumSize: Size(double.infinity, 55),
-                  backgroundColor: Colors.brown[900],
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return HomeScreen();
-                      },
-                    ),
-                  );
-                },
-                child: Text(
-                  "Enter Shop",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
+              CustomButton(text: 'Enter Shop'),
             ],
           ),
         ),

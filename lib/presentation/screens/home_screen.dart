@@ -1,6 +1,7 @@
 import 'package:coffee_app/Widgets/0ffer_card.dart';
 import 'package:coffee_app/Widgets/coffe_card.dart';
 import 'package:coffee_app/presentation/screens/detail_screen.dart';
+import 'package:coffee_app/presentation/themes/colors.dart';
 import 'package:coffee_app/presentation/widgets/custom_drawer.dart';
 
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class HomeScreen extends StatelessWidget {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        backgroundColor: Color(0xFFEDCDBB),
+        backgroundColor: backgroundColor,
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.white),
           toolbarHeight: 80,
@@ -42,9 +43,15 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
           actions: [
-            Icon(Icons.search, color: Colors.white),
+            Icon(
+              Icons.search,
+              color: Colors.white,
+            ),
             SizedBox(width: 10),
-            Icon(Icons.shopping_bag_outlined, color: Colors.white),
+            Icon(
+              Icons.shopping_bag_outlined,
+              color: Colors.white,
+            ),
             SizedBox(width: 10),
           ],
         ),
@@ -53,13 +60,13 @@ class HomeScreen extends StatelessWidget {
           children: [
             OfferCard(),
             TabBar(
-              labelStyle: TextStyle(fontWeight: FontWeight.bold),
+              labelStyle: GoogleFonts.bebasNeue(fontSize: 20, letterSpacing: 1),
               indicatorSize: TabBarIndicatorSize.tab,
               labelColor: Colors.brown[900],
               dividerColor: Colors.transparent,
               indicatorColor: Colors.black,
               tabs: const [
-                Tab(text: "Home"),
+                Tab(text: "Coffee "),
                 Tab(text: "Menu"),
                 Tab(text: "Offer"),
               ],

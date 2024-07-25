@@ -1,3 +1,4 @@
+import 'package:coffee_app/presentation/widgets/custom_button.dart';
 import 'package:coffee_app/presentation/widgets/size_card.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -37,7 +38,7 @@ class _DetailScreenState extends State<DetailScreen> {
           ),
           SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 50.0, horizontal: 10.0),
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 50),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -67,7 +68,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         Text(
                           "Cappuccino",
                           style: GoogleFonts.poppins(
-                            fontSize: 19,
+                            fontSize: 22,
                             fontWeight: FontWeight.bold,
                             color: Colors.brown[900],
                           ),
@@ -97,7 +98,7 @@ class _DetailScreenState extends State<DetailScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Container(
-                        height: screenHeight * 0.4, // 40% of screen height
+                        height: screenHeight * 0.4,
                         child: Image.asset(
                           "lib/images/1.png",
                           fit: BoxFit.contain,
@@ -114,24 +115,11 @@ class _DetailScreenState extends State<DetailScreen> {
                       ),
                     ],
                   ),
+                  SizedBox(height: 60),
                   Center(
                     child: Column(
                       children: [
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(3),
-                            ),
-                            backgroundColor: Colors.brown[900],
-                          ),
-                          onPressed: () {},
-                          child: Text(
-                            "Add to cart",
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
+                        CustomButton(text: "Add to cart"),
                       ],
                     ),
                   ),

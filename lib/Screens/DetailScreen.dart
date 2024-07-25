@@ -27,9 +27,10 @@ class _DetailscreenState extends State<Detailscreen> {
                       height: screenHeight,
                       color: const Color(0xFFBF9270)),
                   Container(
-                      width: screenWidth * 0.75, // 75% of screen width
-                      height: screenHeight,
-                      color: Color(0xffEDCDBB)),
+                    width: screenWidth * 0.75, // 75% of screen width
+                    height: screenHeight,
+                    color: Color(0xffEDCDBB),
+                  ),
                 ],
               ),
             ],

@@ -20,19 +20,20 @@ class _WelcomScreenState extends State<WelcomScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.network(
-                "https://cdn-icons-png.flaticon.com/128/1095/1095205.png",
+              Spacer(),
+              Image.asset(
+                "lib/images/2.png",
               ),
               SizedBox(height: 30),
               Text(
                 "Coffee so good\nyour taste bude\nwill love it",
                 textAlign: TextAlign.center,
-                style: GoogleFonts.lora(
+                style: GoogleFonts.aBeeZee(
                   fontSize: 30,
-                  fontWeight: FontWeight.w300,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 30),
+              Spacer(),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(double.infinity, 50),
@@ -43,7 +44,8 @@ class _WelcomScreenState extends State<WelcomScreen> {
                   "Get Started",
                   style: TextStyle(color: Colors.white),
                 ),
-              )
+              ),
+              SizedBox(height: 30)
             ],
           ),
         ),

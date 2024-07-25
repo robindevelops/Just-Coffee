@@ -1,6 +1,7 @@
 import 'package:coffee_app/Widgets/SizeCard.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:item_count_number_button/item_count_number_button.dart';
 
 class Detailscreen extends StatefulWidget {
   const Detailscreen({super.key});
@@ -45,8 +46,8 @@ class _DetailscreenState extends State<Detailscreen> {
                   IconButton(
                     onPressed: () {},
                     icon: Icon(
-                      Icons.arrow_back_ios_new,
-                      color: Colors.white,
+                      Icons.arrow_back,
+                      color: Colors.orange,
                     ),
                   ),
                   Center(
@@ -113,36 +114,9 @@ class _DetailscreenState extends State<Detailscreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 90),
                   Center(
                     child: Column(
                       children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.brown),
-                          ),
-                          height: 40,
-                          width: 100,
-                          child: Row(
-                            children: [
-                              Expanded(
-                                child: IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(Icons.add),
-                                ),
-                              ),
-                              Text("0"),
-                              Expanded(
-                                child: IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(Icons.remove),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(height: 20),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(

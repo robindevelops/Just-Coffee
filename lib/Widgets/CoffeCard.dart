@@ -25,9 +25,9 @@ class CoffeeCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  "Latte Machiato",
+                  "Cappuccino",
                   style: GoogleFonts.poppins(
-                    fontSize: 13,
+                    fontSize: 15,
                     fontWeight: FontWeight.bold,
                     color: Colors.orange[400],
                   ),
@@ -37,7 +37,7 @@ class CoffeeCard extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.bold,
-                    color: Colors.grey,
+                    color: Colors.white,
                   ),
                 ),
                 SizedBox(height: 10),
@@ -60,12 +60,9 @@ class CoffeeCard extends StatelessWidget {
                           bottomRight: Radius.circular(10),
                         ),
                       ),
-                      width: 40,
-                      height: 30,
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.add),
-                      ),
+                      width: 45,
+                      height: 40,
+                      child: Icon(Icons.add),
                     )
                   ],
                 )
@@ -74,11 +71,11 @@ class CoffeeCard extends StatelessWidget {
           ),
         ),
         Positioned(
-          left: 40,
+          left: 30,
           bottom: 100,
           child: Image.asset(
             "lib/images/1.png",
-            height: 125,
+            height: 135,
           ),
         ),
       ],

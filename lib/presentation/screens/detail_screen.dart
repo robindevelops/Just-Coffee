@@ -1,15 +1,15 @@
-import 'package:coffee_app/Widgets/SizeCard.dart';
+import 'package:coffee_app/presentation/widgets/size_card.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Detailscreen extends StatefulWidget {
-  const Detailscreen({super.key});
+class DetailScreen extends StatefulWidget {
+  const DetailScreen({super.key});
 
   @override
-  State<Detailscreen> createState() => _DetailscreenState();
+  State<DetailScreen> createState() => _DetailScreenState();
 }
 
-class _DetailscreenState extends State<Detailscreen> {
+class _DetailScreenState extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;

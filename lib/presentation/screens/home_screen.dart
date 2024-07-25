@@ -1,7 +1,8 @@
-import 'package:coffee_app/Screens/DetailScreen.dart';
-import 'package:coffee_app/Widgets/CoffeCard.dart';
-import 'package:coffee_app/Widgets/CustomDrawer.dart';
-import 'package:coffee_app/Widgets/OfferCard.dart';
+import 'package:coffee_app/Widgets/0ffer_card.dart';
+import 'package:coffee_app/Widgets/coffe_card.dart';
+import 'package:coffee_app/presentation/screens/detail_screen.dart';
+import 'package:coffee_app/presentation/widgets/custom_drawer.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -113,7 +114,7 @@ class HomeScreen extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return Detailscreen();
+                  return DetailScreen();
                 },
               ),
             );

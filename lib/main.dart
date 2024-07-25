@@ -1,4 +1,4 @@
-import 'package:coffee_app/Screens/WelcomScreen.dart';
+import 'package:coffee_app/presentation/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

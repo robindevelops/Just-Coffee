@@ -4,13 +4,13 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Colors.black,
       child: Column(
         children: [
           Spacer(),
           DrawerHeader(
             child: CircleAvatar(
-              backgroundColor: Colors.blue[200],
+              backgroundColor: Colors.white,
               maxRadius: 50,
               child: Icon(Icons.person),
             ),
@@ -59,7 +59,7 @@ class CustomDrawer extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
       ),
-      leading: Icon(icon, color: Colors.black),
+      leading: Icon(icon, color: Colors.white),
       onTap: onTap,
     );
   }

@@ -1,7 +1,6 @@
-import 'package:coffee_app/Themes/Colors.dart';
+import 'package:coffee_app/DetailScreen.dart';
 import 'package:coffee_app/Widgets/CoffeCard.dart';
 import 'package:coffee_app/Widgets/OfferCard.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -13,9 +12,10 @@ class HomeScreen extends StatelessWidget {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        backgroundColor: Color.fromARGB(255, 245, 202, 137),
+        backgroundColor: Color(0xFFEDCDBB),
         appBar: AppBar(
-          backgroundColor: base,
+          toolbarHeight: 80,
+          backgroundColor: Colors.black,
           centerTitle: true,
           leading: CircleAvatar(),
           title: Column(
@@ -26,18 +26,23 @@ class HomeScreen extends StatelessWidget {
                 style: GoogleFonts.bebasNeue(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
+                  color: Colors.white,
                 ),
               ),
               Text(
-                "14th Street New York, USA",
-                style: TextStyle(fontSize: 15),
+                "📍14th Street New York, USA",
+                style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
           actions: [
-            Icon(Icons.search),
+            Icon(Icons.search, color: Colors.white),
             SizedBox(width: 10),
-            Icon(Icons.shopping_bag_outlined),
+            Icon(Icons.shopping_bag_outlined, color: Colors.white),
             SizedBox(width: 10),
           ],
         ),
@@ -45,6 +50,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             OfferCard(),
             TabBar(
+              labelStyle: TextStyle(fontWeight: FontWeight.bold),
               indicatorSize: TabBarIndicatorSize.tab,
               labelColor: Colors.brown[900],
               dividerColor: Colors.transparent,
@@ -52,7 +58,7 @@ class HomeScreen extends StatelessWidget {
               tabs: const [
                 Tab(text: "Home"),
                 Tab(text: "Menu"),
-                Tab(text: "Offers"),
+                Tab(text: "Offer"),
               ],
             ),
             Expanded(
@@ -100,7 +106,16 @@ class HomeScreen extends StatelessWidget {
       itemCount: 15,
       itemBuilder: (context, index) {
         return GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return Detailscreen();
+                },
+              ),
+            );
+          },
           child: CoffeeCard(),
         );
       },

@@ -1,7 +1,6 @@
 import 'package:coffee_app/Widgets/SizeCard.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:item_count_number_button/item_count_number_button.dart';
 
 class Detailscreen extends StatefulWidget {
   const Detailscreen({super.key});
@@ -24,15 +23,13 @@ class _DetailscreenState extends State<Detailscreen> {
               Row(
                 children: [
                   Container(
-                    width: screenWidth * 0.25, // 25% of screen width
-                    height: screenHeight,
-                    color: const Color.fromARGB(255, 90, 53, 46),
-                  ),
+                      width: screenWidth * 0.25, // 25% of screen width
+                      height: screenHeight,
+                      color: const Color(0xFFBF9270)),
                   Container(
-                    width: screenWidth * 0.75, // 75% of screen width
-                    height: screenHeight,
-                    color: Color.fromARGB(255, 245, 202, 137),
-                  ),
+                      width: screenWidth * 0.75, // 75% of screen width
+                      height: screenHeight,
+                      color: Color(0xffEDCDBB)),
                 ],
               ),
             ],
@@ -44,17 +41,19 @@ class _DetailscreenState extends State<Detailscreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     icon: Icon(
                       Icons.arrow_back,
-                      color: Colors.orange,
+                      color: Colors.black,
                     ),
                   ),
                   Center(
                     child: Text(
                       "Items Details",
-                      style: GoogleFonts.poppins(
-                        fontSize: 22,
+                      style: GoogleFonts.dancingScript(
+                        fontSize: 45,
                         fontWeight: FontWeight.bold,
                         color: Colors.brown[900],
                       ),
@@ -128,7 +127,7 @@ class _DetailscreenState extends State<Detailscreen> {
                           child: Text(
                             "Add to cart",
                             style: TextStyle(
-                              color: Color.fromARGB(255, 229, 162, 61),
+                              color: Colors.white,
                             ),
                           ),
                         ),

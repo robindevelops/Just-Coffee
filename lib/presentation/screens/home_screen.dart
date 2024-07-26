@@ -1,7 +1,7 @@
-import 'package:coffee_app/Widgets/0ffer_card.dart';
-import 'package:coffee_app/Widgets/coffe_card.dart';
 import 'package:coffee_app/presentation/screens/detail_screen.dart';
 import 'package:coffee_app/presentation/themes/colors.dart';
+import 'package:coffee_app/presentation/widgets/offer_card.dart';
+import 'package:coffee_app/presentation/widgets/coffe_card.dart';
 import 'package:coffee_app/presentation/widgets/custom_drawer.dart';
 
 import 'package:flutter/material.dart';
@@ -137,6 +137,29 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget buildOffersTab() {
-    return Center(child: Text("Offers Content"));
+    return GridView.builder(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 110),
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+        childAspectRatio: 10 / 9,
+        maxCrossAxisExtent: 200,
+        mainAxisSpacing: 90,
+      ),
+      itemCount: 15,
+      itemBuilder: (context, index) {
+        return GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return DetailScreen();
+                },
+              ),
+            );
+          },
+          child: CoffeeCard(),
+        );
+      },
+    );
   }
 }

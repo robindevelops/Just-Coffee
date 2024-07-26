@@ -98,7 +98,7 @@ class _DetailScreenState extends State<DetailScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Container(
-                        height: screenHeight * 0.4,
+                        height: screenHeight * 0.37,
                         child: Image.asset(
                           "lib/images/1.png",
                           fit: BoxFit.contain,
@@ -106,23 +106,34 @@ class _DetailScreenState extends State<DetailScreen> {
                       ),
                       Column(
                         children: [
-                          SizeCard(size: 'S'),
+                          SizeCard(
+                            size: 'Basic',
+                            icon: Image.network(
+                              "https://cdn-icons-png.flaticon.com/128/5826/5826688.png",
+                              height: 25,
+                            ),
+                          ),
                           SizedBox(height: 10),
-                          SizeCard(size: 'L'),
+                          SizeCard(
+                            size: 'Medium',
+                            icon: Image.network(
+                              "https://cdn-icons-png.flaticon.com/128/5826/5826688.png",
+                              height: 30,
+                            ),
+                          ),
                           SizedBox(height: 10),
-                          SizeCard(size: 'M'),
+                          SizeCard(
+                            size: 'Large',
+                            icon: Image.network(
+                              "https://cdn-icons-png.flaticon.com/128/5826/5826688.png",
+                              height: 40,
+                            ),
+                          ),
                         ],
                       ),
                     ],
                   ),
                   SizedBox(height: 60),
-                  Center(
-                    child: Column(
-                      children: [
-                        CustomButton(text: "Add to cart"),
-                      ],
-                    ),
-                  ),
                 ],
               ),
             ),

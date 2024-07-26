@@ -11,6 +11,33 @@ class DetailScreen extends StatefulWidget {
 }
 
 class _DetailScreenState extends State<DetailScreen> {
+  void _showAddToCartBottomSheet() {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          padding: const EdgeInsets.all(20),
+          height: 400,
+          width: double.infinity,
+          child: Column(
+            children: [
+              Text(
+                'Add to Cart',
+                style: GoogleFonts.poppins(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.brown[900],
+                ),
+              ),
+              Spacer(),
+              CustomButton(text: "Add to Bag")
+            ],
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -24,11 +51,12 @@ class _DetailScreenState extends State<DetailScreen> {
               Row(
                 children: [
                   Container(
-                      width: screenWidth * 0.25, // 25% of screen width
-                      height: screenHeight,
-                      color: const Color(0xFFBF9270)),
+                    width: screenWidth * 0.25,
+                    height: screenHeight,
+                    color: const Color(0xFFBF9270),
+                  ),
                   Container(
-                    width: screenWidth * 0.75, // 75% of screen width
+                    width: screenWidth * 0.75,
                     height: screenHeight,
                     color: Color(0xffEDCDBB),
                   ),
@@ -132,6 +160,23 @@ class _DetailScreenState extends State<DetailScreen> {
                         ],
                       ),
                     ],
+                  ),
+                  SizedBox(height: 30),
+                  Center(
+                    child: ElevatedButton(
+                      onPressed: _showAddToCartBottomSheet,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.brown[900], // background color
+                      ),
+                      child: Text(
+                        'Add to Cart',
+                        style: GoogleFonts.poppins(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
                   ),
                   SizedBox(height: 60),
                 ],

@@ -1,4 +1,3 @@
-import 'package:coffee_app/presentation/widgets/custom_button.dart';
 import 'package:coffee_app/presentation/widgets/size_card.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,14 +11,20 @@ class DetailScreen extends StatefulWidget {
 
 class _DetailScreenState extends State<DetailScreen> {
   void _showAddToCartBottomSheet() {
+    int selectedQuantity = 1;
+    String selectedSize = 'Medium';
+    String specialRequest = '';
+
     showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
         return Container(
           padding: const EdgeInsets.all(20),
-          height: 400,
+          height: 800,
           width: double.infinity,
+          color: Colors.white,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 'Add to Cart',
@@ -29,8 +34,155 @@ class _DetailScreenState extends State<DetailScreen> {
                   color: Colors.brown[900],
                 ),
               ),
+              SizedBox(height: 10),
+              Divider(color: Colors.brown[200]),
+              SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Select Quantity",
+                    style: GoogleFonts.poppins(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.brown[700],
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.brown[100],
+                        child: IconButton(
+                          icon: Icon(Icons.remove, color: Colors.brown[700]),
+                          onPressed: () {
+                            setState(
+                              () {
+                                if (selectedQuantity > 0) selectedQuantity--;
+                              },
+                            );
+                          },
+                        ),
+                      ),
+                      SizedBox(width: 10),
+                      Text(
+                        "$selectedQuantity",
+                        style: GoogleFonts.poppins(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.brown[900],
+                        ),
+                      ),
+                      SizedBox(width: 10),
+                      CircleAvatar(
+                        backgroundColor: Colors.brown[100],
+                        child: IconButton(
+                          icon: Icon(Icons.add, color: Colors.brown[700]),
+                          onPressed: () {
+                            setState(
+                              () {
+                                selectedQuantity++;
+                              },
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+              SizedBox(height: 20),
+              Text(
+                "Select Size",
+                style: GoogleFonts.poppins(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.brown[700],
+                ),
+              ),
+              SizedBox(height: 10),
+              Wrap(
+                spacing: 10.0,
+                children: ['Small', 'Medium', 'Large'].map(
+                  (size) {
+                    return ChoiceChip(
+                      label: Text(
+                        size,
+                        style: GoogleFonts.poppins(
+                          fontSize: 16,
+                          color: selectedSize == size
+                              ? Colors.white
+                              : Colors.brown[900],
+                        ),
+                      ),
+                      selected: selectedSize == size,
+                      onSelected: (bool selected) {
+                        setState(
+                          () {
+                            selectedSize = selected ? size : selectedSize;
+                          },
+                        );
+                      },
+                      selectedColor: Colors.brown[600],
+                      backgroundColor: Colors.brown[100],
+                      padding:
+                          EdgeInsets.symmetric(vertical: 8, horizontal: 15),
+                    );
+                  },
+                ).toList(),
+              ),
+              SizedBox(height: 20),
+              Text(
+                "Any Special Request",
+                style: GoogleFonts.poppins(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.brown[700],
+                ),
+              ),
+              SizedBox(height: 10),
+              TextField(
+                maxLength: 150,
+                onChanged: (value) {
+                  specialRequest = value;
+                },
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  filled: true,
+                  fillColor: Colors.brown[50],
+                  hintText: 'Enter your special requests...',
+                  hintStyle: GoogleFonts.poppins(
+                    color: Colors.brown[300],
+                  ),
+                ),
+              ),
               Spacer(),
-              CustomButton(text: "Add to Bag")
+              Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    // Handle checkout action
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.brown[900],
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 50,
+                      vertical: 15,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  child: Text(
+                    'Checkout',
+                    style: GoogleFonts.poppins(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         );
@@ -79,24 +231,15 @@ class _DetailScreenState extends State<DetailScreen> {
                       color: Colors.black,
                     ),
                   ),
-                  Center(
-                    child: Text(
-                      "Items Details",
-                      style: GoogleFonts.dancingScript(
-                        fontSize: 45,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.brown[900],
-                      ),
-                    ),
-                  ),
                   SizedBox(height: 30),
                   Center(
                     child: Column(
                       children: [
                         Text(
                           "Cappuccino",
-                          style: GoogleFonts.poppins(
-                            fontSize: 22,
+                          style: GoogleFonts.poiretOne(
+                            letterSpacing: 1,
+                            fontSize: 30,
                             fontWeight: FontWeight.bold,
                             color: Colors.brown[900],
                           ),
@@ -112,9 +255,9 @@ class _DetailScreenState extends State<DetailScreen> {
                         SizedBox(height: 20),
                         Text(
                           "\$70",
-                          style: GoogleFonts.poppins(
-                            fontSize: 17,
-                            fontWeight: FontWeight.bold,
+                          style: GoogleFonts.sen(
+                            fontSize: 23,
+                            fontWeight: FontWeight.w400,
                             color: Colors.brown[900],
                           ),
                         ),
@@ -134,29 +277,11 @@ class _DetailScreenState extends State<DetailScreen> {
                       ),
                       Column(
                         children: [
-                          SizeCard(
-                            size: 'Basic',
-                            icon: Image.network(
-                              "https://cdn-icons-png.flaticon.com/128/5826/5826688.png",
-                              height: 25,
-                            ),
-                          ),
-                          SizedBox(height: 10),
-                          SizeCard(
-                            size: 'Medium',
-                            icon: Image.network(
-                              "https://cdn-icons-png.flaticon.com/128/5826/5826688.png",
-                              height: 30,
-                            ),
-                          ),
-                          SizedBox(height: 10),
-                          SizeCard(
-                            size: 'Large',
-                            icon: Image.network(
-                              "https://cdn-icons-png.flaticon.com/128/5826/5826688.png",
-                              height: 40,
-                            ),
-                          ),
+                          SizeCard(text: 'Hot'),
+                          SizedBox(height: 15),
+                          SizeCard(text: 'Strong'),
+                          SizedBox(height: 15),
+                          SizeCard(text: 'Tasty'),
                         ],
                       ),
                     ],
@@ -166,10 +291,10 @@ class _DetailScreenState extends State<DetailScreen> {
                     child: ElevatedButton(
                       onPressed: _showAddToCartBottomSheet,
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.brown[900], // background color
+                        backgroundColor: Colors.brown[900],
                       ),
                       child: Text(
-                        'Add to Cart',
+                        'Checkout',
                         style: GoogleFonts.poppins(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,

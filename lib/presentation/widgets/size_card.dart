@@ -4,36 +4,34 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SizeCard extends StatelessWidget {
-  final String size;
-  final Image icon;
+  final String text;
 
-  SizeCard({super.key, required this.size, required this.icon});
+  SizeCard({
+    super.key,
+    required this.text,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.brown),
-        borderRadius: BorderRadius.circular(5),
+        shape: BoxShape.circle,
+        color: const Color(0xFFBF9270),
       ),
-      height: 80,
-      width: 75,
+      height: 70,
+      width: 70,
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            icon,
             SizedBox(height: 5),
             Text(
-              size,
-              style: GoogleFonts.poppins(
-                fontWeight: FontWeight.w500,
+              text,
+              style: GoogleFonts.poiretOne(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 19,
               ),
-              // style: TextStyle(
-              //   fontSize: 16,
-              //   fontWeight: FontWeight.bold,
-              //   color: Colors.brown.shade900,
-              // ),
             ),
           ],
         ),

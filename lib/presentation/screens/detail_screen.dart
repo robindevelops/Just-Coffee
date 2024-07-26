@@ -30,10 +30,10 @@ class _DetailScreenState extends State<DetailScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Add to Cart',
-                      style: GoogleFonts.poppins(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
+                      'Add to Cart 🛒',
+                      style: GoogleFonts.bebasNeue(
+                        fontSize: 30,
+                        fontWeight: FontWeight.w400,
                         color: Colors.brown[900],
                       ),
                     ),
@@ -45,9 +45,10 @@ class _DetailScreenState extends State<DetailScreen> {
                       children: [
                         Text(
                           "Select Quantity",
-                          style: GoogleFonts.poppins(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
+                          style: GoogleFonts.bebasNeue(
+                            letterSpacing: 2,
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
                             color: Colors.brown[700],
                           ),
                         ),
@@ -76,7 +77,7 @@ class _DetailScreenState extends State<DetailScreen> {
                               style: GoogleFonts.poppins(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.brown[900],
+                                color: Colors.black,
                               ),
                             ),
                             SizedBox(width: 10),
@@ -151,18 +152,15 @@ class _DetailScreenState extends State<DetailScreen> {
                     SizedBox(height: 30),
                     Center(
                       child: ElevatedButton(
-                        onPressed: () {
-                          // Handle checkout action
-                        },
+                        onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                          backgroundColor:
-                              const Color.fromARGB(255, 85, 53, 47),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          backgroundColor: Color.fromARGB(255, 85, 53, 47),
                           padding: EdgeInsets.symmetric(
                             horizontal: 50,
                             vertical: 15,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
                           ),
                         ),
                         child: Text(
@@ -286,6 +284,9 @@ class _DetailScreenState extends State<DetailScreen> {
                     child: ElevatedButton(
                       onPressed: _showAddToCartBottomSheet,
                       style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5),
+                        ),
                         backgroundColor: Colors.brown[900],
                       ),
                       child: Text(
@@ -298,7 +299,6 @@ class _DetailScreenState extends State<DetailScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 60),
                 ],
               ),
             ),

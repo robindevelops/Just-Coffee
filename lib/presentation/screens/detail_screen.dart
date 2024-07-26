@@ -1,3 +1,4 @@
+import 'package:coffee_app/presentation/widgets/custom_field.dart';
 import 'package:coffee_app/presentation/widgets/size_card.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,7 +14,6 @@ class _DetailScreenState extends State<DetailScreen> {
   void _showAddToCartBottomSheet() {
     int selectedQuantity = 1;
     String selectedSize = 'Medium';
-    String specialRequest = '';
 
     showModalBottomSheet(
       context: context,
@@ -55,8 +55,10 @@ class _DetailScreenState extends State<DetailScreen> {
                           CircleAvatar(
                             backgroundColor: Colors.brown[100],
                             child: IconButton(
-                              icon:
-                                  Icon(Icons.remove, color: Colors.brown[700]),
+                              icon: Icon(
+                                Icons.remove,
+                                color: Colors.brown[700],
+                              ),
                               onPressed: () {
                                 setState(
                                   () {
@@ -144,23 +146,7 @@ class _DetailScreenState extends State<DetailScreen> {
                     ),
                   ),
                   SizedBox(height: 10),
-                  TextField(
-                    maxLength: 150,
-                    onChanged: (value) {
-                      specialRequest = value;
-                    },
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      filled: true,
-                      fillColor: Colors.brown[50],
-                      hintText: 'Enter your special requests...',
-                      hintStyle: GoogleFonts.poppins(
-                        color: Colors.brown[300],
-                      ),
-                    ),
-                  ),
+                  CustomTextField(),
                   Spacer(),
                   Center(
                     child: ElevatedButton(
@@ -168,7 +154,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         // Handle checkout action
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.brown[900],
+                        backgroundColor: const Color.fromARGB(255, 85, 53, 47),
                         padding: EdgeInsets.symmetric(
                           horizontal: 50,
                           vertical: 15,
@@ -292,7 +278,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 30),
+                  SizedBox(height: 100),
                   Center(
                     child: ElevatedButton(
                       onPressed: _showAddToCartBottomSheet,
@@ -300,7 +286,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         backgroundColor: Colors.brown[900],
                       ),
                       child: Text(
-                        'Checkout',
+                        'See Details',
                         style: GoogleFonts.poppins(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,

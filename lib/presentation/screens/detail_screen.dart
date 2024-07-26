@@ -18,173 +18,179 @@ class _DetailScreenState extends State<DetailScreen> {
     showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
-        return Container(
-          padding: const EdgeInsets.all(20),
-          height: 800,
-          width: double.infinity,
-          color: Colors.white,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Add to Cart',
-                style: GoogleFonts.poppins(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.brown[900],
-                ),
-              ),
-              SizedBox(height: 10),
-              Divider(color: Colors.brown[200]),
-              SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        return StatefulBuilder(
+          builder: (BuildContext context, StateSetter setState) {
+            return Container(
+              padding: const EdgeInsets.all(20),
+              height: 800,
+              width: double.infinity,
+              color: Colors.white,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Select Quantity",
+                    'Add to Cart',
+                    style: GoogleFonts.poppins(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.brown[900],
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Divider(color: Colors.brown[200]),
+                  SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Select Quantity",
+                        style: GoogleFonts.poppins(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.brown[700],
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: Colors.brown[100],
+                            child: IconButton(
+                              icon:
+                                  Icon(Icons.remove, color: Colors.brown[700]),
+                              onPressed: () {
+                                setState(
+                                  () {
+                                    if (selectedQuantity > 0)
+                                      selectedQuantity--;
+                                  },
+                                );
+                              },
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          Text(
+                            "$selectedQuantity",
+                            style: GoogleFonts.poppins(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.brown[900],
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          CircleAvatar(
+                            backgroundColor: Colors.brown[100],
+                            child: IconButton(
+                              icon: Icon(Icons.add, color: Colors.brown[700]),
+                              onPressed: () {
+                                setState(
+                                  () {
+                                    selectedQuantity++;
+                                  },
+                                );
+                              },
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                  SizedBox(height: 20),
+                  Text(
+                    "Select Size",
                     style: GoogleFonts.poppins(
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
                       color: Colors.brown[700],
                     ),
                   ),
-                  Row(
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.brown[100],
-                        child: IconButton(
-                          icon: Icon(Icons.remove, color: Colors.brown[700]),
-                          onPressed: () {
+                  SizedBox(height: 10),
+                  Wrap(
+                    spacing: 10.0,
+                    children: ['Small', 'Medium', 'Large'].map(
+                      (size) {
+                        return ChoiceChip(
+                          label: Text(
+                            size,
+                            style: GoogleFonts.poppins(
+                              fontSize: 16,
+                              color: selectedSize == size
+                                  ? Colors.white
+                                  : Colors.brown[900],
+                            ),
+                          ),
+                          selected: selectedSize == size,
+                          onSelected: (bool selected) {
                             setState(
                               () {
-                                if (selectedQuantity > 0) selectedQuantity--;
+                                selectedSize = selected ? size : selectedSize;
                               },
                             );
                           },
+                          selectedColor: Colors.brown[600],
+                          backgroundColor: Colors.brown[100],
+                          padding:
+                              EdgeInsets.symmetric(vertical: 8, horizontal: 15),
+                        );
+                      },
+                    ).toList(),
+                  ),
+                  SizedBox(height: 20),
+                  Text(
+                    "Any Special Request",
+                    style: GoogleFonts.poppins(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.brown[700],
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  TextField(
+                    maxLength: 150,
+                    onChanged: (value) {
+                      specialRequest = value;
+                    },
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      filled: true,
+                      fillColor: Colors.brown[50],
+                      hintText: 'Enter your special requests...',
+                      hintStyle: GoogleFonts.poppins(
+                        color: Colors.brown[300],
+                      ),
+                    ),
+                  ),
+                  Spacer(),
+                  Center(
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // Handle checkout action
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.brown[900],
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 50,
+                          vertical: 15,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
                         ),
                       ),
-                      SizedBox(width: 10),
-                      Text(
-                        "$selectedQuantity",
+                      child: Text(
+                        'Checkout',
                         style: GoogleFonts.poppins(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Colors.brown[900],
+                          color: Colors.white,
                         ),
                       ),
-                      SizedBox(width: 10),
-                      CircleAvatar(
-                        backgroundColor: Colors.brown[100],
-                        child: IconButton(
-                          icon: Icon(Icons.add, color: Colors.brown[700]),
-                          onPressed: () {
-                            setState(
-                              () {
-                                selectedQuantity++;
-                              },
-                            );
-                          },
-                        ),
-                      ),
-                    ],
-                  )
+                    ),
+                  ),
                 ],
               ),
-              SizedBox(height: 20),
-              Text(
-                "Select Size",
-                style: GoogleFonts.poppins(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.brown[700],
-                ),
-              ),
-              SizedBox(height: 10),
-              Wrap(
-                spacing: 10.0,
-                children: ['Small', 'Medium', 'Large'].map(
-                  (size) {
-                    return ChoiceChip(
-                      label: Text(
-                        size,
-                        style: GoogleFonts.poppins(
-                          fontSize: 16,
-                          color: selectedSize == size
-                              ? Colors.white
-                              : Colors.brown[900],
-                        ),
-                      ),
-                      selected: selectedSize == size,
-                      onSelected: (bool selected) {
-                        setState(
-                          () {
-                            selectedSize = selected ? size : selectedSize;
-                          },
-                        );
-                      },
-                      selectedColor: Colors.brown[600],
-                      backgroundColor: Colors.brown[100],
-                      padding:
-                          EdgeInsets.symmetric(vertical: 8, horizontal: 15),
-                    );
-                  },
-                ).toList(),
-              ),
-              SizedBox(height: 20),
-              Text(
-                "Any Special Request",
-                style: GoogleFonts.poppins(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.brown[700],
-                ),
-              ),
-              SizedBox(height: 10),
-              TextField(
-                maxLength: 150,
-                onChanged: (value) {
-                  specialRequest = value;
-                },
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  filled: true,
-                  fillColor: Colors.brown[50],
-                  hintText: 'Enter your special requests...',
-                  hintStyle: GoogleFonts.poppins(
-                    color: Colors.brown[300],
-                  ),
-                ),
-              ),
-              Spacer(),
-              Center(
-                child: ElevatedButton(
-                  onPressed: () {
-                    // Handle checkout action
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.brown[900],
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 50,
-                      vertical: 15,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                  child: Text(
-                    'Checkout',
-                    style: GoogleFonts.poppins(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+            );
+          },
         );
       },
     );

@@ -10,14 +10,12 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
-  // Sample data for the list
   final List<String> items = [
     "Cappuccino",
-    "Item 2",
-    "Item 3",
-    "Item 4",
-    "Item 5",
-    "Cappuccino",
+    "Latte",
+    "Espresso",
+    "Mocha",
+    "Americano",
   ];
 
   @override
@@ -72,7 +70,7 @@ class _CartScreenState extends State<CartScreen> {
                       title: Text(
                         items[index],
                         style: GoogleFonts.aboreto(
-                          fontSize: 30,
+                          fontSize: 25,
                           fontWeight: FontWeight.bold,
                           color: Colors.brown[700],
                         ),
@@ -84,6 +82,10 @@ class _CartScreenState extends State<CartScreen> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
+                      trailing: IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.add),
+                      ),
                     ),
                   ),
                 );
@@ -94,21 +96,25 @@ class _CartScreenState extends State<CartScreen> {
             padding: EdgeInsets.symmetric(vertical: 15.0),
             color: Colors.black,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                IconButton(
-                  icon: Icon(
-                    Icons.shopping_cart_outlined,
-                    color: Colors.white,
-                  ),
-                  onPressed: () {},
-                ),
-                Text(
-                  "Checkout",
-                  style: GoogleFonts.aBeeZee(
-                    fontSize: 20,
-                    color: Colors.white,
-                  ),
+                Row(
+                  children: [
+                    IconButton(
+                      icon: Icon(
+                        Icons.shopping_cart_outlined,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {},
+                    ),
+                    Text(
+                      "Checkout",
+                      style: GoogleFonts.aBeeZee(
+                        fontSize: 20,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

@@ -108,7 +108,8 @@ class _DetailScreenState extends State<DetailScreen> {
                     ),
                     SizedBox(height: 10),
                     Wrap(
-                      spacing: 10.0,
+                      spacing: 10,
+                      runSpacing: 13,
                       children: ['Small', 'Medium', 'Large'].map(
                         (size) {
                           return ChoiceChip(

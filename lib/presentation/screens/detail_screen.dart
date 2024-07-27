@@ -30,11 +30,11 @@ class _DetailScreenState extends State<DetailScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Add to Cart 🛒',
+                      'Add to Cart',
                       style: GoogleFonts.bebasNeue(
                         fontSize: 30,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.brown[900],
+                        fontWeight: FontWeight.bold,
+                        color: Colors.brown[700],
                       ),
                     ),
                     SizedBox(height: 10),
@@ -45,10 +45,9 @@ class _DetailScreenState extends State<DetailScreen> {
                       children: [
                         Text(
                           "Select Quantity",
-                          style: GoogleFonts.bebasNeue(
-                            letterSpacing: 2,
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold,
+                          style: GoogleFonts.poppins(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
                             color: Colors.brown[700],
                           ),
                         ),

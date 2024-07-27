@@ -1,3 +1,4 @@
+import 'package:coffee_app/presentation/screens/cart_screen.dart';
 import 'package:coffee_app/presentation/screens/detail_screen.dart';
 import 'package:coffee_app/presentation/themes/colors.dart';
 import 'package:coffee_app/presentation/widgets/offer_card.dart';
@@ -48,9 +49,21 @@ class HomeScreen extends StatelessWidget {
               color: Colors.white,
             ),
             SizedBox(width: 10),
-            Icon(
-              Icons.shopping_bag_outlined,
-              color: Colors.white,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return CartScreen();
+                    },
+                  ),
+                );
+              },
+              child: Icon(
+                Icons.shopping_bag_outlined,
+                color: Colors.white,
+              ),
             ),
             SizedBox(width: 10),
           ],

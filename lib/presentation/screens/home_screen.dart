@@ -1,4 +1,6 @@
-import 'package:coffee_app/presentation/screens/cart_screen.dart';
+import 'package:coffee_app/presentation/coffee_screens/coffe.dart';
+import 'package:coffee_app/presentation/coffee_screens/menu.dart';
+import 'package:coffee_app/presentation/coffee_screens/offer.dart';
 import 'package:coffee_app/presentation/screens/detail_screen.dart';
 import 'package:coffee_app/presentation/themes/colors.dart';
 import 'package:coffee_app/presentation/widgets/offer_card.dart';
@@ -51,14 +53,7 @@ class HomeScreen extends StatelessWidget {
             SizedBox(width: 10),
             GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return CartScreen();
-                    },
-                  ),
-                );
+                Navigator.pushNamed(context, "/CartScreen");
               },
               child: Icon(
                 Icons.shopping_bag_outlined,
@@ -87,9 +82,9 @@ class HomeScreen extends StatelessWidget {
             Expanded(
               child: TabBarView(
                 children: [
-                  buildHomeTab(),
-                  buildMenuTab(),
-                  buildOffersTab(),
+                  Coffee(),
+                  Menu(),
+                  Offer(),
                 ],
               ),
             ),
@@ -115,64 +110,6 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  Widget buildHomeTab() {
-    return GridView.builder(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 110),
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-        childAspectRatio: 10 / 9,
-        maxCrossAxisExtent: 200,
-        mainAxisSpacing: 90,
-      ),
-      itemCount: 15,
-      itemBuilder: (context, index) {
-        return GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return DetailScreen();
-                },
-              ),
-            );
-          },
-          child: CoffeeCard(),
-        );
-      },
-    );
-  }
-
-  Widget buildMenuTab() {
-    return Center(child: Text("Menu Content"));
-  }
-
-  Widget buildOffersTab() {
-    return GridView.builder(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 110),
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-        childAspectRatio: 10 / 9,
-        maxCrossAxisExtent: 200,
-        mainAxisSpacing: 90,
-      ),
-      itemCount: 15,
-      itemBuilder: (context, index) {
-        return GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return DetailScreen();
-                },
-              ),
-            );
-          },
-          child: CoffeeCard(),
-        );
-      },
     );
   }
 }

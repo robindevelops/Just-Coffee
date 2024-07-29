@@ -1,14 +1,13 @@
 import 'package:coffee_app/presentation/coffee_screens/coffe.dart';
 import 'package:coffee_app/presentation/coffee_screens/menu.dart';
 import 'package:coffee_app/presentation/coffee_screens/offer.dart';
-import 'package:coffee_app/presentation/screens/detail_screen.dart';
 import 'package:coffee_app/presentation/themes/colors.dart';
+import 'package:coffee_app/presentation/widgets/custom_appbar.dart';
 import 'package:coffee_app/presentation/widgets/offer_card.dart';
-import 'package:coffee_app/presentation/widgets/coffe_card.dart';
 import 'package:coffee_app/presentation/widgets/custom_drawer.dart';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -19,50 +18,7 @@ class HomeScreen extends StatelessWidget {
       length: 3,
       child: Scaffold(
         backgroundColor: backgroundColor,
-        appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.white),
-          toolbarHeight: 80,
-          backgroundColor: Colors.black,
-          centerTitle: true,
-          title: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Just Coffee",
-                style: GoogleFonts.bebasNeue(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-              Text(
-                "📍14th Street New York, USA",
-                style: TextStyle(
-                  fontSize: 15,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
-          actions: [
-            Icon(
-              Icons.search,
-              color: Colors.white,
-            ),
-            SizedBox(width: 10),
-            GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, "/CartScreen");
-              },
-              child: Icon(
-                Icons.shopping_bag_outlined,
-                color: Colors.white,
-              ),
-            ),
-            SizedBox(width: 10),
-          ],
-        ),
+        appBar: CustomAppBar(),
         drawer: CustomDrawer(),
         body: Column(
           children: [
@@ -74,7 +30,7 @@ class HomeScreen extends StatelessWidget {
               dividerColor: Colors.transparent,
               indicatorColor: Colors.black,
               tabs: const [
-                Tab(text: "Coffee "),
+                Tab(text: "Coffee"),
                 Tab(text: "Menu"),
                 Tab(text: "Offer"),
               ],
@@ -90,24 +46,37 @@ class HomeScreen extends StatelessWidget {
             ),
           ],
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.grey,
-          backgroundColor: Colors.black,
-          items: [
-            BottomNavigationBarItem(
-              label: "Home",
-              icon: Icon(Icons.home_filled),
+        bottomNavigationBar: Container(
+          color: Colors.black,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 12),
+            child: GNav(
+              selectedIndex: 1,
+              backgroundColor: Colors.black,
+              color: Colors.grey,
+              activeColor: Colors.white,
+              tabBackgroundColor: Colors.grey.shade800,
+              onTabChange: (value) {
+                print(value);
+              },
+              gap: 6,
+              padding: EdgeInsets.all(16),
+              tabs: [
+                GButton(
+                  text: "Profile",
+                  icon: Icons.person_2,
+                ),
+                GButton(
+                  text: "Home",
+                  icon: Icons.home_filled,
+                ),
+                GButton(
+                  text: "History",
+                  icon: Icons.history,
+                ),
+              ],
             ),
-            BottomNavigationBarItem(
-              label: "Bag",
-              icon: Icon(Icons.shopping_bag),
-            ),
-            BottomNavigationBarItem(
-              label: "Cart",
-              icon: Icon(Icons.shopping_cart),
-            ),
-          ],
+          ),
         ),
       ),
     );

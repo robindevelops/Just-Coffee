@@ -47,7 +47,12 @@ class _WelcomScreenState extends State<WelcomScreen> {
                 ),
               ),
               SizedBox(height: 90),
-              CustomButton(text: 'Enter Shop'),
+              CustomButton(
+                text: 'Enter Shop',
+                onPressed: () {
+                  Navigator.pushNamed(context, "/HomeScreen");
+                },
+              ),
             ],
           ),
         ),

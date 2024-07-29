@@ -18,7 +18,7 @@ class CustomDrawer extends StatelessWidget {
           _createDrawerItem(
             icon: Icons.home,
             text: 'H O M E',
-            onTap: () => null,
+            onTap: () => Navigator.pushNamed(context, "/HomeScreen"),
           ),
           _createDrawerItem(
             icon: Icons.favorite_sharp,
@@ -28,7 +28,7 @@ class CustomDrawer extends StatelessWidget {
           _createDrawerItem(
             icon: Icons.shopping_bag_rounded,
             text: 'C A R T',
-            onTap: () => null,
+            onTap: () => Navigator.pushNamed(context, "/CartScreen"),
           ),
           _createDrawerItem(
             icon: Icons.settings,
@@ -38,7 +38,7 @@ class CustomDrawer extends StatelessWidget {
           _createDrawerItem(
             icon: Icons.logout_outlined,
             text: 'L O G O U T',
-            onTap: () => null,
+            onTap: () => Navigator.pushNamed(context, "/WelcomScreen"),
           ),
           Spacer(flex: 3),
         ],

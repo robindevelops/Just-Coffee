@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
+  void Function()? onPressed;
   CustomButton({
     super.key,
     required this.text,
+    required this.onPressed,
   });
 
   @override
@@ -18,16 +20,7 @@ class CustomButton extends StatelessWidget {
         minimumSize: Size(double.infinity, 55),
         backgroundColor: Colors.brown[900],
       ),
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) {
-              return HomeScreen();
-            },
-          ),
-        );
-      },
+      onPressed: onPressed,
       child: Text(
         text,
         style: TextStyle(color: Colors.white),

@@ -164,7 +164,7 @@ class _DetailScreenState extends State<DetailScreen> {
                           ),
                         ),
                         child: Text(
-                          'Checkout',
+                          'Add To Cart',
                           style: GoogleFonts.poppins(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,

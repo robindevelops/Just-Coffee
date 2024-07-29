@@ -51,14 +51,13 @@ class HomeScreen extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 12),
             child: GNav(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               selectedIndex: 1,
               backgroundColor: Colors.black,
               color: Colors.grey,
               activeColor: Colors.white,
               tabBackgroundColor: Colors.grey.shade800,
-              onTabChange: (value) {
-                print(value);
-              },
+              onTabChange: (value) {},
               gap: 6,
               padding: EdgeInsets.all(16),
               tabs: [

@@ -25,7 +25,7 @@ class _CartScreenState extends State<CartScreen> {
         backgroundColor: Colors.black,
         centerTitle: true,
         title: Text(
-          "Cart",
+          "My Cart",
           style: GoogleFonts.aBeeZee(
             fontSize: 30,
             color: Colors.white,
@@ -93,30 +93,66 @@ class _CartScreenState extends State<CartScreen> {
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(vertical: 15.0),
+            padding: EdgeInsets.symmetric(vertical: 30.0),
             color: Colors.black,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Row(
-                  children: [
-                    IconButton(
-                      icon: Icon(
-                        Icons.shopping_cart_outlined,
-                        color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        "SubTotal",
+                        style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
-                      onPressed: () {},
+                      Text(
+                        "\$60",
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      )
+                    ],
+                  ),
+                  Divider(indent: 50, endIndent: 50),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        "Discount",
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      ),
+                      Text(
+                        "\$40",
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      )
+                    ],
+                  ),
+                  Divider(indent: 40, endIndent: 40),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        "Total",
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      ),
+                      Text(
+                        "\$20",
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      )
+                    ],
+                  ),
+                  SizedBox(height: 20),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: Size(double.infinity, 50),
                     ),
-                    Text(
+                    onPressed: () {},
+                    child: Text(
                       "Checkout",
-                      style: GoogleFonts.aBeeZee(
-                        fontSize: 20,
-                        color: Colors.white,
-                      ),
+                      style: TextStyle(color: Colors.black),
                     ),
-                  ],
-                ),
-              ],
+                  ),
+                ],
+              ),
             ),
           ),
         ],

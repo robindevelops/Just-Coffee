@@ -14,6 +14,7 @@ class _DetailScreenState extends State<DetailScreen> {
   void _showAddToCartBottomSheet() {
     int selectedQuantity = 1;
     String selectedSize = 'Medium';
+    String selectedMilk = 'Farm';
 
     showModalBottomSheet(
       context: context,
@@ -29,17 +30,17 @@ class _DetailScreenState extends State<DetailScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Add to Cart',
-                      style: GoogleFonts.bebasNeue(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.brown[700],
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Divider(color: Colors.brown[200]),
-                    SizedBox(height: 10),
+                    // Text(
+                    //   'Add to Cart',
+                    //   style: GoogleFonts.bebasNeue(
+                    //     fontSize: 30,
+                    //     fontWeight: FontWeight.bold,
+                    //     color: Colors.brown[700],
+                    //   ),
+                    // ),
+                    // SizedBox(height: 10),
+                    // Divider(color: Colors.brown[200]),
+                    // SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -48,7 +49,7 @@ class _DetailScreenState extends State<DetailScreen> {
                           style: GoogleFonts.poppins(
                             fontSize: 18,
                             fontWeight: FontWeight.w500,
-                            color: Colors.brown[700],
+                            color: Colors.black,
                           ),
                         ),
                         Row(
@@ -58,7 +59,7 @@ class _DetailScreenState extends State<DetailScreen> {
                               child: IconButton(
                                 icon: Icon(
                                   Icons.remove,
-                                  color: Colors.brown[700],
+                                  color: Colors.black,
                                 ),
                                 onPressed: () {
                                   setState(
@@ -83,7 +84,7 @@ class _DetailScreenState extends State<DetailScreen> {
                             CircleAvatar(
                               backgroundColor: Colors.brown[100],
                               child: IconButton(
-                                icon: Icon(Icons.add, color: Colors.brown[700]),
+                                icon: Icon(Icons.add, color: Colors.black),
                                 onPressed: () {
                                   setState(
                                     () {
@@ -98,12 +99,13 @@ class _DetailScreenState extends State<DetailScreen> {
                       ],
                     ),
                     SizedBox(height: 20),
+                    Divider(thickness: 2),
                     Text(
                       "Select Size",
                       style: GoogleFonts.poppins(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.brown[700],
+                        color: Colors.black,
                       ),
                     ),
                     SizedBox(height: 10),
@@ -113,13 +115,12 @@ class _DetailScreenState extends State<DetailScreen> {
                       children: ['Small', 'Medium', 'Large'].map(
                         (size) {
                           return ChoiceChip(
+                            side: BorderSide.none,
                             label: Text(
                               size,
                               style: GoogleFonts.poppins(
                                 fontSize: 16,
-                                color: selectedSize == size
-                                    ? Colors.white
-                                    : Colors.brown[900],
+                                color: Colors.black,
                               ),
                             ),
                             selected: selectedSize == size,
@@ -130,7 +131,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                 },
                               );
                             },
-                            selectedColor: Colors.brown[600],
+                            selectedColor: Colors.orange[400],
                             backgroundColor: Colors.brown[100],
                             padding: EdgeInsets.symmetric(
                                 vertical: 8, horizontal: 15),
@@ -138,13 +139,60 @@ class _DetailScreenState extends State<DetailScreen> {
                         },
                       ).toList(),
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 10),
+                    Divider(thickness: 2),
+                    SizedBox(height: 10),
                     Text(
-                      "Any Special Request",
+                      "Select Milk",
                       style: GoogleFonts.poppins(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Colors.brown[700],
+                        color: Colors.black,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Wrap(
+                      spacing: 5,
+                      runSpacing: 5,
+                      children:
+                          ['Farm', 'coconut', 'Almond', 'Glutan-Free'].map(
+                        (milk) {
+                          return ChoiceChip(
+                            side: BorderSide.none,
+                            label: Text(
+                              milk,
+                              style: GoogleFonts.poppins(
+                                fontSize: 16,
+                                color: Colors.black,
+                              ),
+                            ),
+                            selected: selectedMilk == milk,
+                            onSelected: (bool selected) {
+                              setState(
+                                () {
+                                  selectedMilk = selected ? milk : selectedMilk;
+                                },
+                              );
+                            },
+                            selectedColor: Colors.orange[400],
+                            backgroundColor: Colors.grey[350],
+                            padding: EdgeInsets.symmetric(
+                              vertical: 8,
+                              horizontal: 15,
+                            ),
+                          );
+                        },
+                      ).toList(),
+                    ),
+                    SizedBox(height: 10),
+                    Divider(thickness: 2),
+                    SizedBox(height: 10),
+                    Text(
+                      "Any Special Request ?",
+                      style: GoogleFonts.poppins(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black,
                       ),
                     ),
                     SizedBox(height: 10),

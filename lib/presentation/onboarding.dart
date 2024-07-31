@@ -1,3 +1,4 @@
+import 'package:coffee_app/presentation/themes/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -16,6 +17,7 @@ class _OnboardingState extends State<Onboarding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Column(
         children: [
           SizedBox(
@@ -63,13 +65,13 @@ class _OnboardingState extends State<Onboarding> {
                 },
                 child: Text(
                   "Skip",
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(color: Colors.white),
                 ),
               ),
               SmoothPageIndicator(
                 controller: _controller,
                 count: 3,
-                effect: WormEffect(
+                effect: SwapEffect(
                   activeDotColor: Colors.red,
                   dotColor: Colors.orange,
                 ),
@@ -87,7 +89,7 @@ class _OnboardingState extends State<Onboarding> {
                 },
                 child: Text(
                   _currentPage == 2 ? "Done" : "Next",
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(color: Colors.white),
                 ),
               ),
             ],
@@ -112,16 +114,15 @@ class _OnboardingState extends State<Onboarding> {
               children: [
                 TextSpan(
                   text: title.split(' ')[0],
-                  style: GoogleFonts.calistoga(
+                  style: GoogleFonts.paytoneOne(
                     fontSize: 40,
                     color: Colors.orange[600],
-                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 TextSpan(
                   text: title.substring(title.indexOf(' ')),
-                  style: GoogleFonts.calistoga(
-                    fontSize: 30,
+                  style: GoogleFonts.actor(
+                    fontSize: 35,
                     color: Colors.brown,
                   ),
                 ),
@@ -135,9 +136,10 @@ class _OnboardingState extends State<Onboarding> {
           Text(
             description,
             textAlign: TextAlign.center,
-            style: GoogleFonts.roboto(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
+            style: GoogleFonts.lato(
+              fontSize: 20,
+              // fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
           ),
         ],

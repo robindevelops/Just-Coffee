@@ -16,11 +16,15 @@ class _CartScreenState extends State<CartScreen> {
     "Espresso",
     "Mocha",
     "Americano",
+    "Americano",
+    "Americano",
+    "Americano",
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.black,
         centerTitle: true,
@@ -65,7 +69,7 @@ class _CartScreenState extends State<CartScreen> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      tileColor: Color(0xffEDCDBB),
+                      tileColor: Color.fromARGB(255, 247, 223, 210),
                       leading: Image.asset("lib/images/1.png", height: 100),
                       title: Text(
                         items[index],
@@ -94,61 +98,23 @@ class _CartScreenState extends State<CartScreen> {
           ),
           Container(
             padding: EdgeInsets.symmetric(vertical: 30.0),
-            color: Colors.black,
+            color: Colors.white,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(
-                        "SubTotal",
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      ),
-                      Text(
-                        "\$60",
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      )
-                    ],
-                  ),
-                  Divider(indent: 50, endIndent: 50),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(
-                        "Discount",
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      ),
-                      Text(
-                        "\$40",
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      )
-                    ],
-                  ),
-                  Divider(indent: 40, endIndent: 40),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(
-                        "Total",
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      ),
-                      Text(
-                        "\$20",
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      )
-                    ],
-                  ),
-                  SizedBox(height: 20),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      minimumSize: Size(double.infinity, 50),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      backgroundColor: Colors.black,
+                      minimumSize: Size(double.infinity, 60),
                     ),
                     onPressed: () {},
                     child: Text(
                       "Checkout",
-                      style: TextStyle(color: Colors.black),
+                      style: TextStyle(color: Colors.white),
                     ),
                   ),
                 ],

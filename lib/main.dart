@@ -1,8 +1,7 @@
 import 'package:coffee_app/presentation/screens/onboarding_screen.dart';
 import 'package:coffee_app/presentation/screens/cart_screen.dart';
 import 'package:coffee_app/presentation/screens/detail_screen.dart';
-import 'package:coffee_app/presentation/screens/home_screen.dart';
-import 'package:coffee_app/presentation/screens/coffeeguide_screen.dart';
+import 'package:coffee_app/presentation/screens/main_screen/main_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        '/HomeScreen': (context) => HomeScreen(),
+        '/MainScreen': (context) => MainScreen(),
         '/DetailScreen': (context) => DetailScreen(),
         '/CartScreen': (context) => CartScreen(),
       },

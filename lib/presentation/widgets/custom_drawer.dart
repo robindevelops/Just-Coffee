@@ -46,7 +46,7 @@ class CustomDrawer extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return types();
+                  return guide();
                 },
               ),
             ),

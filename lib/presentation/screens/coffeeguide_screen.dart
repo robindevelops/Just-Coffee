@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class types extends StatefulWidget {
-  const types({super.key});
+class guide extends StatefulWidget {
+  const guide({super.key});
 
   @override
   _TypesState createState() => _TypesState();
 }
 
-class _TypesState extends State<types> {
+class _TypesState extends State<guide> {
   TransformationController _transformationController =
       TransformationController();
 

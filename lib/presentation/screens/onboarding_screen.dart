@@ -79,7 +79,7 @@ class _OnboardingState extends State<Onboarding> {
                 TextButton(
                   onPressed: () {
                     if (_currentPage == 2) {
-                      Navigator.pushNamed(context, "/HomeScreen");
+                      Navigator.pushNamed(context, "/MainScreen");
                     } else {
                       _controller.nextPage(
                         duration: Duration(milliseconds: 300),

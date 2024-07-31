@@ -1,7 +1,7 @@
-import 'package:coffee_app/presentation/screens/onboarding_screen.dart';
-import 'package:coffee_app/presentation/screens/cart_screen.dart';
-import 'package:coffee_app/presentation/screens/detail_screen.dart';
-import 'package:coffee_app/presentation/screens/main_screen/main_screen.dart';
+import 'package:coffee_app/presentation/general_screens/onboarding_screen.dart';
+import 'package:coffee_app/presentation/general_screens/cart_screen.dart';
+import 'package:coffee_app/presentation/general_screens/detail_screen.dart';
+import 'package:coffee_app/presentation/general_screens/main_screen/main_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

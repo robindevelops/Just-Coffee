@@ -1,4 +1,4 @@
-import 'package:coffee_app/presentation/screens/coffeeguide_screen.dart';
+import 'package:coffee_app/presentation/general_screens/coffeeguide_screen.dart';
 import 'package:flutter/material.dart';
 
 class CustomDrawer extends StatelessWidget {

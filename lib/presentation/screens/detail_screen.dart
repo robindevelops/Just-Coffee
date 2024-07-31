@@ -30,17 +30,6 @@ class _DetailScreenState extends State<DetailScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Text(
-                    //   'Add to Cart',
-                    //   style: GoogleFonts.bebasNeue(
-                    //     fontSize: 30,
-                    //     fontWeight: FontWeight.bold,
-                    //     color: Colors.brown[700],
-                    //   ),
-                    // ),
-                    // SizedBox(height: 10),
-                    // Divider(color: Colors.brown[200]),
-                    // SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -110,8 +99,8 @@ class _DetailScreenState extends State<DetailScreen> {
                     ),
                     SizedBox(height: 10),
                     Wrap(
-                      spacing: 10,
-                      runSpacing: 13,
+                      spacing: 5,
+                      runSpacing: 5,
                       children: ['Small', 'Medium', 'Large'].map(
                         (size) {
                           return ChoiceChip(

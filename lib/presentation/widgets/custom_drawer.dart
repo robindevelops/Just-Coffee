@@ -1,3 +1,4 @@
+import 'package:coffee_app/presentation/screens/coffeeguide_screen.dart';
 import 'package:flutter/material.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -39,11 +40,22 @@ class CustomDrawer extends StatelessWidget {
             onTap: () => null,
           ),
           _createDrawerItem(
+            icon: Icons.coffee_maker_outlined,
+            text: 'C O F F E G U I D E',
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return types();
+                },
+              ),
+            ),
+          ),
+          _createDrawerItem(
             icon: Icons.logout_outlined,
             text: 'L O G O U T',
             onTap: () => {
               Navigator.pop(context),
-              Navigator.pushNamed(context, "/WelcomScreen"),
             },
           ),
           Spacer(flex: 3),

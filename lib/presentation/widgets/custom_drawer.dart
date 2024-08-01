@@ -16,10 +16,10 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           _createDrawerItem(
-              icon: Icons.home,
+              icon: Icons.home_max_outlined,
               text: 'H O M E',
               onTap: () {
-                Navigator.pushNamed(context, "/MainScreen");
+                Navigator.pushNamed(context, "/HomeScreen");
               }),
           _createDrawerItem(
             icon: Icons.person_2,
@@ -30,14 +30,14 @@ class CustomDrawer extends StatelessWidget {
             },
           ),
           _createDrawerItem(
-              icon: Icons.shopping_bag_rounded,
+              icon: Icons.shopping_cart_outlined,
               text: 'C A R T',
               onTap: () {
                 Navigator.pop(context);
                 Navigator.pushNamed(context, "/CartScreen");
               }),
           _createDrawerItem(
-              icon: Icons.shopping_bag_rounded,
+              icon: Icons.change_history,
               text: 'H I S T O R Y',
               onTap: () {
                 Navigator.pop(context);

@@ -1,5 +1,7 @@
+import 'package:coffee_app/presentation/general_screens/detail_screen.dart';
 import 'package:coffee_app/presentation/widgets/coffe_card.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 class Coffee extends StatefulWidget {
   const Coffee({super.key});
@@ -22,7 +24,13 @@ class _CoffeeState extends State<Coffee> {
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {
-            Navigator.pushNamed(context, "/DetailScreen");
+            Navigator.push(
+              context,
+              PageTransition(
+                type: PageTransitionType.fade,
+                child: DetailScreen(),
+              ),
+            );
           },
           child: CoffeeCard(),
         );

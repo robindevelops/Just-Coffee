@@ -107,14 +107,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.2.1"
-  google_nav_bar:
-    dependency: "direct main"
-    description:
-      name: google_nav_bar
-      sha256: "1c8e3882fa66ee7b74c24320668276ca23affbd58f0b14a24c1e5590f4d07ab0"
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.0.6"
   http:
     dependency: transitive
     description:
@@ -320,6 +312,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.0"
+  turn_page_transition:
+    dependency: "direct main"
+    description:
+      name: turn_page_transition
+      sha256: "2d0a3c1aa592996d46fc15a0fd6203d9a53e016f3e598ea83034e56870615a7c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.0"
   typed_data:
     dependency: transitive
     description:

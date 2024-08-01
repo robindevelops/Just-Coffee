@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class guide extends StatefulWidget {
-  const guide({super.key});
+class GuideScreen extends StatefulWidget {
+  const GuideScreen({super.key});
 
   @override
   _TypesState createState() => _TypesState();
 }
 
-class _TypesState extends State<guide> {
+class _TypesState extends State<GuideScreen> {
   TransformationController _transformationController =
       TransformationController();
 
@@ -31,6 +31,7 @@ class _TypesState extends State<guide> {
           children: [
             Container(
               height: MediaQuery.of(context).size.height / 1.3,
+              width: MediaQuery.of(context).size.width,
               child: InteractiveViewer(
                 transformationController: _transformationController,
                 minScale: 1.0,
@@ -38,9 +39,11 @@ class _TypesState extends State<guide> {
                 onInteractionEnd: (details) {
                   _transformationController.value = Matrix4.identity();
                 },
-                child: Image.asset(
-                  "lib/images/2.png",
-                  fit: BoxFit.contain,
+                child: Center(
+                  child: Image.asset(
+                    "lib/images/2.png",
+                    fit: BoxFit.fitWidth,
+                  ),
                 ),
               ),
             ),

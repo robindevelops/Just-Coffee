@@ -46,17 +46,13 @@ class _DetailScreenState extends State<DetailScreen> {
                             CircleAvatar(
                               backgroundColor: Colors.white,
                               child: IconButton(
-                                icon: Icon(
-                                  Icons.remove,
-                                  color: Colors.black,
-                                ),
+                                icon: Icon(Icons.remove, color: Colors.black),
                                 onPressed: () {
-                                  setState(
-                                    () {
-                                      if (selectedQuantity > 0)
-                                        selectedQuantity--;
-                                    },
-                                  );
+                                  setState(() {
+                                    if (selectedQuantity > 0) {
+                                      selectedQuantity--;
+                                    }
+                                  });
                                 },
                               ),
                             ),
@@ -75,16 +71,14 @@ class _DetailScreenState extends State<DetailScreen> {
                               child: IconButton(
                                 icon: Icon(Icons.add, color: Colors.black),
                                 onPressed: () {
-                                  setState(
-                                    () {
-                                      selectedQuantity++;
-                                    },
-                                  );
+                                  setState(() {
+                                    selectedQuantity++;
+                                  });
                                 },
                               ),
                             ),
                           ],
-                        )
+                        ),
                       ],
                     ),
                     SizedBox(height: 20),
@@ -114,16 +108,16 @@ class _DetailScreenState extends State<DetailScreen> {
                             ),
                             selected: selectedSize == size,
                             onSelected: (bool selected) {
-                              setState(
-                                () {
-                                  selectedSize = selected ? size : selectedSize;
-                                },
-                              );
+                              setState(() {
+                                selectedSize = selected ? size : selectedSize;
+                              });
                             },
                             selectedColor: Colors.orange[400],
                             backgroundColor: Colors.grey[350],
                             padding: EdgeInsets.symmetric(
-                                vertical: 8, horizontal: 15),
+                              vertical: 8,
+                              horizontal: 15,
+                            ),
                           );
                         },
                       ).toList(),
@@ -144,7 +138,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       spacing: 5,
                       runSpacing: 5,
                       children:
-                          ['Farm', 'coconut', 'Almond', 'Glutan-Free'].map(
+                          ['Farm', 'Coconut', 'Almond', 'Gluten-Free'].map(
                         (milk) {
                           return ChoiceChip(
                             side: BorderSide.none,
@@ -157,11 +151,9 @@ class _DetailScreenState extends State<DetailScreen> {
                             ),
                             selected: selectedMilk == milk,
                             onSelected: (bool selected) {
-                              setState(
-                                () {
-                                  selectedMilk = selected ? milk : selectedMilk;
-                                },
-                              );
+                              setState(() {
+                                selectedMilk = selected ? milk : selectedMilk;
+                              });
                             },
                             selectedColor: Colors.orange[400],
                             backgroundColor: Colors.grey[350],
@@ -177,7 +169,7 @@ class _DetailScreenState extends State<DetailScreen> {
                     Divider(thickness: 2),
                     SizedBox(height: 10),
                     Text(
-                      "Any Special Request ?",
+                      "Any Special Request?",
                       style: GoogleFonts.poppins(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
@@ -194,7 +186,7 @@ class _DetailScreenState extends State<DetailScreen> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          backgroundColor: Color.fromARGB(255, 85, 53, 47),
+                          backgroundColor: Color(0xFF55352F),
                           padding: EdgeInsets.symmetric(
                             horizontal: 50,
                             vertical: 15,
@@ -228,21 +220,17 @@ class _DetailScreenState extends State<DetailScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          Column(
+          Row(
             children: [
-              Row(
-                children: [
-                  Container(
-                    width: screenWidth * 0.25,
-                    height: screenHeight,
-                    color: const Color(0xFFBF9270),
-                  ),
-                  Container(
-                    width: screenWidth * 0.75,
-                    height: screenHeight,
-                    color: Color(0xffEDCDBB),
-                  ),
-                ],
+              Container(
+                width: screenWidth * 0.25,
+                height: screenHeight,
+                color: const Color(0xFFBF9270),
+              ),
+              Container(
+                width: screenWidth * 0.75,
+                height: screenHeight,
+                color: Color(0xFFEDCDBB),
               ),
             ],
           ),
@@ -325,6 +313,10 @@ class _DetailScreenState extends State<DetailScreen> {
                           borderRadius: BorderRadius.circular(5),
                         ),
                         backgroundColor: Colors.brown[900],
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 50,
+                          vertical: 15,
+                        ),
                       ),
                       child: Text(
                         'Shop Now',

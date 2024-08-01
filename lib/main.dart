@@ -1,7 +1,10 @@
-import 'package:coffee_app/presentation/general_screens/onboarding_screen.dart';
 import 'package:coffee_app/presentation/general_screens/cart_screen.dart';
+import 'package:coffee_app/presentation/general_screens/coffeeguide_screen.dart';
 import 'package:coffee_app/presentation/general_screens/detail_screen.dart';
-import 'package:coffee_app/presentation/general_screens/main_screen/main_screen.dart';
+import 'package:coffee_app/presentation/general_screens/history_screen.dart';
+import 'package:coffee_app/presentation/general_screens/home_screen.dart';
+import 'package:coffee_app/presentation/general_screens/profile_screen.dart';
+import 'package:coffee_app/presentation/general_screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,15 +14,17 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        '/MainScreen': (context) => MainScreen(),
+        '/HomeScreen': (context) => HomeScreen(),
         '/DetailScreen': (context) => DetailScreen(),
         '/CartScreen': (context) => CartScreen(),
+        '/ProfileScreen': (context) => ProfileScreen(),
+        '/HistoryScreen': (context) => HistoryScreen(),
+        '/GuideScreen': (context) => GuideScreen(),
       },
       home: OnboardingScreen(),
     );

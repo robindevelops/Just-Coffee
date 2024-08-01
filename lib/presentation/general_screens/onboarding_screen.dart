@@ -25,11 +25,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               child: PageView(
                 controller: _controller,
                 onPageChanged: (index) {
-                  setState(
-                    () {
-                      _currentPage = index;
-                    },
-                  );
+                  setState(() {
+                    _currentPage = index;
+                  });
                 },
                 children: [
                   _buildPage(
@@ -79,7 +77,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 TextButton(
                   onPressed: () {
                     if (_currentPage == 2) {
-                      Navigator.pushNamed(context, "/MainScreen");
+                      Navigator.pushNamed(context, '/HomeScreen');
                     } else {
                       _controller.nextPage(
                         duration: Duration(milliseconds: 300),
@@ -93,7 +91,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),
@@ -138,8 +136,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             description,
             textAlign: TextAlign.center,
             style: GoogleFonts.lato(
-              fontSize: 19,
-              // fontWeight: FontWeight.bold,
+              fontSize: 17,
+              fontWeight: FontWeight.w500,
               color: Colors.white,
             ),
           ),

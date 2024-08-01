@@ -109,32 +109,18 @@ class _CartScreenState extends State<CartScreen> {
           ),
           Container(
             padding: EdgeInsets.symmetric(vertical: 20.0),
-            color: Color(0xFFF5F5F5),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Column(
-                children: [
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      backgroundColor: Colors.black,
-                      minimumSize: Size(double.infinity, 60),
-                    ),
-                    onPressed: () {},
-                    child: Text(
-                      "Checkout",
-                      style: GoogleFonts.aBeeZee(
-                        color: Colors.white,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ),
-                ],
+            color: Colors.black,
+            width: double.infinity,
+            child: Center(
+              child: Text(
+                "Checkout",
+                style: GoogleFonts.aBeeZee(
+                  color: Colors.white,
+                  fontSize: 20,
+                ),
               ),
             ),
-          ),
+          )
         ],
       ),
     );

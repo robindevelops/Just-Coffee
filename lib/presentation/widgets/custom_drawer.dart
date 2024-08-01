@@ -1,4 +1,3 @@
-import 'package:coffee_app/presentation/general_screens/coffeeguide_screen.dart';
 import 'package:flutter/material.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -23,6 +22,14 @@ class CustomDrawer extends StatelessWidget {
                 Navigator.pushNamed(context, "/MainScreen");
               }),
           _createDrawerItem(
+            icon: Icons.person_2,
+            text: 'P R O F I L E',
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, "/ProfileScreen");
+            },
+          ),
+          _createDrawerItem(
               icon: Icons.shopping_bag_rounded,
               text: 'C A R T',
               onTap: () {
@@ -30,23 +37,18 @@ class CustomDrawer extends StatelessWidget {
                 Navigator.pushNamed(context, "/CartScreen");
               }),
           _createDrawerItem(
-            icon: Icons.person_2,
-            text: 'P R O F I L E',
-            onTap: () => null,
-          ),
+              icon: Icons.shopping_bag_rounded,
+              text: 'H I S T O R Y',
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, "/HistoryScreen");
+              }),
           _createDrawerItem(
               icon: Icons.coffee_maker_outlined,
               text: 'C O F F E G U I D E',
               onTap: () {
                 Navigator.pop(context);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return guide();
-                    },
-                  ),
-                );
+                Navigator.pushNamed(context, "/GuideScreen");
               }),
           _createDrawerItem(
             icon: Icons.logout_outlined,

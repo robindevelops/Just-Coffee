@@ -16,7 +16,7 @@ class _CoffeeState extends State<Coffee> {
       gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
         childAspectRatio: 10 / 9,
         maxCrossAxisExtent: 200,
-        mainAxisSpacing: 90,
+        mainAxisSpacing: 110,
       ),
       itemCount: 15,
       itemBuilder: (context, index) {

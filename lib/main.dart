@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         '/DetailScreen': (context) => DetailScreen(),
         '/CartScreen': (context) => CartScreen(),
       },
-      home: Onboarding(),
+      home: OnboardingScreen(),
     );
   }
 }

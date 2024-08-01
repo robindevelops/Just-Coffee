@@ -27,7 +27,7 @@ class SizeCard extends StatelessWidget {
             SizedBox(height: 5),
             Text(
               text,
-              style: GoogleFonts.poiretOne(
+              style: GoogleFonts.abel(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 19,

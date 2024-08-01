@@ -3,7 +3,6 @@ import 'package:coffee_app/presentation/general_screens/main_screen/contents/hom
 import 'package:coffee_app/presentation/general_screens/main_screen/contents/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:coffee_app/presentation/themes/colors.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -13,14 +12,13 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int _selectedIndex = 1;
+  int selectedIndex = 1;
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        backgroundColor: backgroundColor,
         body: getScreen(),
         bottomNavigationBar: Container(
           color: Colors.black,
@@ -28,7 +26,7 @@ class _MainScreenState extends State<MainScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 12),
             child: GNav(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              selectedIndex: _selectedIndex,
+              selectedIndex: selectedIndex,
               backgroundColor: Colors.black,
               color: Colors.grey,
               activeColor: Colors.white,
@@ -36,7 +34,7 @@ class _MainScreenState extends State<MainScreen> {
               onTabChange: (index) {
                 setState(
                   () {
-                    _selectedIndex = index;
+                    selectedIndex = index;
                   },
                 );
               },
@@ -64,7 +62,7 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   Widget getScreen() {
-    switch (_selectedIndex) {
+    switch (selectedIndex) {
       case 0:
         return ProfileScreen();
       case 1:

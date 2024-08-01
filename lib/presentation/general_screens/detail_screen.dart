@@ -44,7 +44,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         Row(
                           children: [
                             CircleAvatar(
-                              backgroundColor: Colors.brown[100],
+                              backgroundColor: Colors.white,
                               child: IconButton(
                                 icon: Icon(
                                   Icons.remove,
@@ -71,7 +71,7 @@ class _DetailScreenState extends State<DetailScreen> {
                             ),
                             SizedBox(width: 10),
                             CircleAvatar(
-                              backgroundColor: Colors.brown[100],
+                              backgroundColor: Colors.white,
                               child: IconButton(
                                 icon: Icon(Icons.add, color: Colors.black),
                                 onPressed: () {
@@ -121,7 +121,7 @@ class _DetailScreenState extends State<DetailScreen> {
                               );
                             },
                             selectedColor: Colors.orange[400],
-                            backgroundColor: Colors.brown[100],
+                            backgroundColor: Colors.grey[350],
                             padding: EdgeInsets.symmetric(
                                 vertical: 8, horizontal: 15),
                           );

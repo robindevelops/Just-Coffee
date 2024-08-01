@@ -38,8 +38,8 @@ class _TypesState extends State<guide> {
                 onInteractionEnd: (details) {
                   _transformationController.value = Matrix4.identity();
                 },
-                child: Image.network(
-                  "https://i.pinimg.com/originals/d5/47/aa/d547aaf9238ced2a4d2b33ffcc17ce63.png",
+                child: Image.asset(
+                  "lib/images/2.png",
                   fit: BoxFit.contain,
                 ),
               ),

@@ -20,13 +20,8 @@ class CustomDrawer extends StatelessWidget {
               icon: Icons.home,
               text: 'H O M E',
               onTap: () {
-                Navigator.pushNamed(context, "/HomeScreen");
+                Navigator.pushNamed(context, "/MainScreen");
               }),
-          _createDrawerItem(
-            icon: Icons.favorite_sharp,
-            text: 'F A V O U R I T E',
-            onTap: () => null,
-          ),
           _createDrawerItem(
               icon: Icons.shopping_bag_rounded,
               text: 'C A R T',
@@ -35,22 +30,24 @@ class CustomDrawer extends StatelessWidget {
                 Navigator.pushNamed(context, "/CartScreen");
               }),
           _createDrawerItem(
-            icon: Icons.settings,
-            text: 'S E T T I N G S',
+            icon: Icons.person_2,
+            text: 'P R O F I L E',
             onTap: () => null,
           ),
           _createDrawerItem(
-            icon: Icons.coffee_maker_outlined,
-            text: 'C O F F E G U I D E',
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return guide();
-                },
-              ),
-            ),
-          ),
+              icon: Icons.coffee_maker_outlined,
+              text: 'C O F F E G U I D E',
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return guide();
+                    },
+                  ),
+                );
+              }),
           _createDrawerItem(
             icon: Icons.logout_outlined,
             text: 'L O G O U T',

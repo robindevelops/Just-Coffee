@@ -1,10 +1,17 @@
+import 'package:coffee_app/presentation/general_screens/search_screen%20.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
+  @override
+  _CustomAppBarState createState() => _CustomAppBarState();
+
   @override
   Size get preferredSize => Size.fromHeight(80.0);
+}
 
+class _CustomAppBarState extends State<CustomAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -12,36 +19,23 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       toolbarHeight: 80,
       backgroundColor: Colors.black,
       centerTitle: true,
-      title: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            "Just Coffee",
-            style: GoogleFonts.bebasNeue(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-          ),
-          GestureDetector(
-            onTap: () {
-              _showLocationDialog(context);
-            },
-            child: Text(
-              "📍14th Street New York, USA",
-              style: TextStyle(
-                fontSize: 15,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ],
-      ),
+      title: _buildTitle(),
       actions: [
-        Icon(
-          Icons.search,
-          color: Colors.white,
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              PageTransition(
+                duration: Duration(milliseconds: 200),
+                type: PageTransitionType.bottomToTop,
+                child: SearchPage(),
+              ),
+            );
+          },
+          child: Icon(
+            Icons.search,
+            color: Colors.white,
+          ),
         ),
         SizedBox(width: 10),
         GestureDetector(
@@ -54,6 +48,35 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
         SizedBox(width: 10),
+      ],
+    );
+  }
+
+  Widget _buildTitle() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Just Coffee",
+          style: GoogleFonts.bebasNeue(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+        GestureDetector(
+          onTap: () {
+            _showLocationDialog(context);
+          },
+          child: Text(
+            "📍14th Street New York, USA",
+            style: TextStyle(
+              fontSize: 15,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
       ],
     );
   }

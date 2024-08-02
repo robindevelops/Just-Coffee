@@ -24,8 +24,6 @@ class _DetailScreenState extends State<DetailScreen> {
             return SingleChildScrollView(
               child: Container(
                 padding: const EdgeInsets.all(20),
-                height: 900,
-                width: double.infinity,
                 color: Colors.white,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -306,24 +304,37 @@ class _DetailScreenState extends State<DetailScreen> {
                   ),
                   SizedBox(height: 100),
                   Center(
-                    child: ElevatedButton(
-                      onPressed: _showAddToCartBottomSheet,
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
+                    child: GestureDetector(
+                      onTap: _showAddToCartBottomSheet,
+                      child: Container(
+                        height: 60.0,
+                        width: 300.0,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              Color(0xFFEDCDBB),
+                              Color(0xFFBF9270),
+                            ],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
+                          borderRadius: BorderRadius.all(Radius.circular(24.0)),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.3),
+                              blurRadius: 10.0,
+                              offset: Offset(0, 10),
+                            ),
+                          ],
                         ),
-                        backgroundColor: Colors.brown[900],
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 50,
-                          vertical: 15,
-                        ),
-                      ),
-                      child: Text(
-                        'Shop Now',
-                        style: GoogleFonts.poppins(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                        child: Text(
+                          "Add to Cart",
+                          style: GoogleFonts.poppins(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),

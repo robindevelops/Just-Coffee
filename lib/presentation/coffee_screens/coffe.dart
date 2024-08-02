@@ -1,4 +1,4 @@
-import 'package:coffee_app/presentation/general_screens/detail_screen.dart';
+import 'package:coffee_app/presentation/screens/detail_screen.dart';
 import 'package:coffee_app/presentation/widgets/coffe_card.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';

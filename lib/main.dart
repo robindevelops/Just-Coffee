@@ -1,10 +1,10 @@
-import 'package:coffee_app/presentation/general_screens/cart_screen.dart';
-import 'package:coffee_app/presentation/general_screens/coffeeguide_screen.dart';
-import 'package:coffee_app/presentation/general_screens/detail_screen.dart';
-import 'package:coffee_app/presentation/general_screens/history_screen.dart';
-import 'package:coffee_app/presentation/general_screens/home_screen.dart';
-import 'package:coffee_app/presentation/general_screens/profile_screen.dart';
-import 'package:coffee_app/presentation/general_screens/onboarding_screen.dart';
+import 'package:coffee_app/presentation/screens/cart_screen.dart';
+import 'package:coffee_app/presentation/screens/coffeeguide_screen.dart';
+import 'package:coffee_app/presentation/screens/detail_screen.dart';
+import 'package:coffee_app/presentation/screens/history_screen.dart';
+import 'package:coffee_app/presentation/screens/home_screen.dart';
+import 'package:coffee_app/presentation/screens/profile_screen.dart';
+import 'package:coffee_app/presentation/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
